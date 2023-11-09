@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            color: rgb(7, 7, 82);
+
+            border: solid rgb(7, 7, 82);
+            background-color: lightblue;
+            text-align: center;
+            width: 23.2%;
+            float: left;
+            padding: 0.1%;
+            margin: 0.1%;
+
+        }
+
+        img {
+
+            float: left;
+
+        }
+
+        button {
+            width: 24.4%;
+            color: rgb(7, 7, 82);
+            background-color: lightblue;
+            border: solid;
+            border-color: rgb(7, 7, 82);
+            border-width: 5px;
+
+        }
+
+        .j {
+
+            height: 120px;
+            text-align: center;
+            padding: 1px;
+
+        }
+
+        body {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="j"><img src="photos/imgwork.png"></div>
+    <div class="j"><img src="photos/imgfood6.png"></div>
+    <div class="j"><img src="photos/ilearn.png"></div>
+
+    <div class="j"><img src="photos/irest.png"></div>
+
+
+
+    <p id="demo">
+        <button onclick="Work()">PRACUJ</button>
+        <button onclick="Eat()">JEDZ</button>
+        <button onclick="Rest()">ODPOCZNIJ</button>
+        <button onclick="Learn()">UCZ SIE</button>
+    </p>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+    <div id="d4"></div>
+
+
+    <script>
+        let zdrowie = 10.0;
+        let jedzenie = 10.0;
+        let konto = 0.0;
+        let edukacja = 1.0;
+        function Round(x) {
+
+            x = parseFloat(x).toFixed(2);
+            if (zdrowie <= 0) { Dead(); }
+
+        }
+
+        function Show() {
+            Round(zdrowie);
+            Round(edukacja);
+            Round(konto);
+            Round(jedzenie);
+            document.getElementById("d1").innerHTML = "życie : " + "<br>" + zdrowie;
+            document.getElementById("d2").innerHTML = "jedzenie : " + "<br>" + jedzenie;
+            document.getElementById("d3").innerHTML = "konto : " + "<br>" + konto;
+            document.getElementById("d4").innerHTML = "edukacja : " + "<br>" + edukacja;
+
+        }
+        Show()
+
+        function Eat() {
+            jedzenie += 0.7;
+            konto -= 2.0;
+            Round(jedzenie);
+            Round(konto);
+
+        }
+        function Rest() {
+            zdrowie += 0.7;
+            jedzenie -= 0.1;
+            Round(zdrowie);
+            Round(jedzenie);
+
+        }
+        function Work() {
+            konto += edukacja * 0.7;
+            jedzenie -= 0.2;
+            zdrowie -= 0.2
+            Round(konto);
+            Round(jedzenie);
+            Round(zdrowie);
+
+        }
+        function Learn() {
+            edukacja += 0.2;
+            konto -= 0.5;
+            jedzenie -= 0.3;
+            zdrowie -= 0.3;
+            Round(konto);
+            Round(jedzenie);
+            Round(zdrowie);
+
+        }
+        function Play() {
+            zdrowie += 1.0;
+            edukacja -= 0.2;
+
+        }
+        function Dead() {
+            close();
+        }
+
+
+    </script>
+</body>
+
+</html>
