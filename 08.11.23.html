@@ -60,11 +60,13 @@
         <button onclick="Eat()">JEDZ</button>
         <button onclick="Rest()">ODPOCZNIJ</button>
         <button onclick="Learn()">UCZ SIE</button>
+        <button onclick="Play()">GRAJ</button>
     </p>
     <div id="d1"></div>
     <div id="d2"></div>
     <div id="d3"></div>
     <div id="d4"></div>
+    <div id="d5"></div>
 
 
     <script>
@@ -97,14 +99,14 @@
             konto -= 2.0;
             Round(jedzenie);
             Round(konto);
-
+            Show()
         }
         function Rest() {
             zdrowie += 0.7;
             jedzenie -= 0.1;
             Round(zdrowie);
             Round(jedzenie);
-
+            Show();
         }
         function Work() {
             konto += edukacja * 0.7;
@@ -113,7 +115,7 @@
             Round(konto);
             Round(jedzenie);
             Round(zdrowie);
-
+            Show();
         }
         function Learn() {
             edukacja += 0.2;
@@ -123,12 +125,12 @@
             Round(konto);
             Round(jedzenie);
             Round(zdrowie);
-
+            Show()
         }
         function Play() {
             zdrowie += 1.0;
             edukacja -= 0.2;
-
+            Show()
         }
         function Dead() {
             close();
