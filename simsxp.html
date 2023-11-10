@@ -125,8 +125,9 @@
             samopoczucie += 1;
             konto -= 2;
             jedzenie += 1;
-            let x = (Math.random()*100)%2;
+            let x = (Math.random()*10)%10;
             if(x<=1){znajomi +=1;}
+            Show();
         }
         function Eat() {
             jedzenie += 1;
@@ -138,7 +139,7 @@
         function Rest() {
             zdrowie += 0.5;
             samopoczucie += 1;
-            jedzenie -= 0.1;
+            jedzenie -= 0.5;
             
             Show();
         }
