@@ -62,6 +62,7 @@
         <button onclick="Learn()">UCZ SIE</button>
         <button onclick="Play()">GRAJ</button>
         <button onclick="Meet()">SPOTKAJ SIE</button>
+        <button onclick="Lotto()">LOTTO</button>
 
     </p>
     <div id="d1"></div>
@@ -101,7 +102,7 @@
         document.getElementById("d5").innerHTML = "samopoczucie : " + "<br>" + Round(samopoczucie);
         document.getElementById("d6").innerHTML = "znajomi : " + "<br>" + znajomi;
             }
-
+        Show()
         function Round(x) {
             if (zdrowie <= 0) { Dead(); }
             if(jedzenie <= 0){Dead();}
@@ -119,7 +120,11 @@
         }
 
        
-        Show()
+        function Lotto()
+        {
+            let y = Math.random()*10%100;
+            if(y==100){konto+=Math.random()*100;}
+        }
         function Meet()
         {
             samopoczucie += 1;
